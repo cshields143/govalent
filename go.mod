@@ -1,4 +1,4 @@
-module github.com/AlchemistsLab/govalent
+module github.com/cshields143/govalent
 
 go 1.16
 

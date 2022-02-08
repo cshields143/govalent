@@ -2,9 +2,9 @@
 package govalent
 
 import (
-	"github.com/AlchemistsLab/govalent/class_a"
-	"github.com/AlchemistsLab/govalent/class_b"
-	"github.com/AlchemistsLab/govalent/client"
+	"github.com/cshields143/govalent/class_a"
+	"github.com/cshields143/govalent/class_b"
+	"github.com/cshields143/govalent/client"
 	"net/http"
 	"time"
 )

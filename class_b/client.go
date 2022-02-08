@@ -3,7 +3,7 @@ package class_b
 
 import (
 	"fmt"
-	"github.com/AlchemistsLab/govalent/client"
+	"github.com/cshields143/govalent/client"
 )
 
 type Client struct {
