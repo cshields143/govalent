@@ -12,11 +12,10 @@ import (
 //constant used for API client
 const (
 	APIURL             = "https://api.covalenthq.com/v1/"
-	defaultHTTPTimeout = 80 * time.Second
 )
 
 //Default HTTP client
-var httpClient = &http.Client{Timeout: defaultHTTPTimeout}
+var httpClient = &http.Client{}
 
 // APIKey is Covalent API Key.
 var APIKey string
