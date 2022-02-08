@@ -8,3 +8,9 @@ But it has two issues:
 - API keys are included in the URL instead of using Basic Auth; I guess this isn't really an issue, but I feel better knowing my key is buried in a header instead of in the URL itself
 
 For further documentation (these two changes affect nothing the user sees or interacts with), see https://github.com/zaebee/govalent
+
+## Install
+
+```sh
+go get github.com/cshields143/govalent
+```
