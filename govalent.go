@@ -6,7 +6,6 @@ import (
 	"github.com/cshields143/govalent/class_b"
 	"github.com/cshields143/govalent/client"
 	"net/http"
-	"time"
 )
 
 //constant used for API client
