@@ -54,7 +54,6 @@ func (a *API) Request(method, endpoint string, params interface{}, out interface
 			return err
 		}
 		q := u.Query()
-		q.Set("key", a.Key)
 		for k, v := range m {
 			if val := fmt.Sprintf("%v", v); v != "" {
 				q.Set(k, val)
@@ -66,6 +65,7 @@ func (a *API) Request(method, endpoint string, params interface{}, out interface
 		if err != nil {
 			return err
 		}
+		req.SetBasicAuth(a.Key, "")
 		req.Header.Add("content-type", "application/json")
 		res, err := a.HTTPClient.Do(req)
 		if err != nil {
