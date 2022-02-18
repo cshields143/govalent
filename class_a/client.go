@@ -24,7 +24,7 @@ type ClassAInterface interface {
 	ERCTokenTransfers(chainID, address string, params TransferParams) (Transactions, error)
 
 	Block(chainID, blockHeight string) (Blocks, error)
-	Blocks(chainID, startDate, endDate string) (Blocks, error)
+	Blocks(chainID, startDate, endDate string, params PaginateParams) (Blocks, error)
 	LogEventsByContract(chainID, address string, params LogEventsParams) (LogEvents, error)
 	LogEventsByTopic(chainID, topic string, params LogEventsParams) (LogEvents, error)
 
