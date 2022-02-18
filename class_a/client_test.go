@@ -46,7 +46,7 @@ func TestClassA_Blocks(t *testing.T) {
 		    defer s.Close()
 		    api := client.New(s.URL, "ckey_test", s.Client())
 		    classA := Client{API: *api}
-		    got, err := classA.Blocks("chain", "start", "end")
+		    got, err := classA.Blocks("chain", "start", "end", PaginateParams{})
 		    if diff := cmp.Diff(got, tc.want); diff != "" || err != nil {
 			    t.Errorf("%v.Blocks(chain, startDate, endDate) has diff (-got/+want)\n: %v", classA, diff)
 			    t.Errorf("%v.Blocks(chain, startDate, endDate) got err: %v want nil", classA, err)
