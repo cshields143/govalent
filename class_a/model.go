@@ -26,6 +26,7 @@ type LogEventsParams struct {
 	StartingBlock string `json:"starting-block"`
 	EndingBlock   string `json:"ending-block"`
 	PageNumber    int    `json:"page-number"`
+	PageSize      int    `json:"page-size"`
 }
 
 // TokenHoldersParams sets parameters for token holders endpoint.
