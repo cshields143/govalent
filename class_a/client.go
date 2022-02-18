@@ -114,10 +114,10 @@ func (c *Client) Block(chainID, blockHeight string) (Blocks, error) {
 
 // Blocks retrieves a list of blocks that were signed between startDate and endDate (exclusive)
 // If endDate is set to the value latest, return all blocks signed since startDate
-func (c *Client) Blocks(chainID, startDate, endDate string) (Blocks, error) {
+func (c *Client) Blocks(chainID, startDate, endDate string, params PaginateParams) (Blocks, error) {
     u := fmt.Sprintf("%v/block_v2/%v/%v/", chainID, startDate, endDate)
     response := BlockResponse{}
-    err := c.API.Request("GET", u, nil, &response)
+    err := c.API.Request("GET", u, params, &response)
     return response.Data, err
 }
 
