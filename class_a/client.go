@@ -24,6 +24,7 @@ type ClassAInterface interface {
 	ERCTokenTransfers(chainID, address string, params TransferParams) (Transactions, error)
 
 	Block(chainID, blockHeight string) (Blocks, error)
+	Blocks(chainID, startDate, endDate string) (Blocks, error)
 	LogEventsByContract(chainID, address string, params LogEventsParams) (LogEvents, error)
 	LogEventsByTopic(chainID, topic string, params LogEventsParams) (LogEvents, error)
 
@@ -109,6 +110,15 @@ func (c *Client) Block(chainID, blockHeight string) (Blocks, error) {
 	response := BlockResponse{}
 	err := c.API.Request("GET", u, nil, &response)
 	return response.Data, err
+}
+
+// Blocks retrieves a list of blocks that were signed between startDate and endDate (exclusive)
+// If endDate is set to the value latest, return all blocks signed since startDate
+func (c *Client) Blocks(chainID, startDate, endDate string) (Blocks, error) {
+    u := fmt.Sprintf("%v/block_v2/%v/%v/", chainID, startDate, endDate)
+    response := BlockResponse{}
+    err := c.API.Request("GET", u, nil, &response)
+    return response.Data, err
 }
 
 // LogEventsByContract returns a paginated list of decoded log events emitted by a particular smart contract.
