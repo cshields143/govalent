@@ -9,6 +9,10 @@ But it has two issues:
 
 For further documentation (these two changes affect nothing the user sees or interacts with), see https://github.com/zaebee/govalent
 
+## Changes that DO affect what the user sees or interacts with
+
+- Added the Block Heights endpoint from Class A
+
 ## Install
 
 ```sh
