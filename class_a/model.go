@@ -2,6 +2,12 @@ package class_a
 
 import "time"
 
+// PaginateParams sets parameters for the pagination of an arbitrary endpoint
+type PaginateParams struct {
+    PageNumber  int `json:"page-number"`
+    PageSize    int `json:"page-size"`
+}
+
 // BalanceParams sets parameters for token balances endpoint.
 type BalanceParams struct {
 	Nft        bool `json:"nft"`
