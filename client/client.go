@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-	"log"
 	"net/http"
 	"net/url"
 )
@@ -60,7 +59,6 @@ func (a *API) Request(method, endpoint string, params interface{}, out interface
 			}
 		}
 		u.RawQuery = q.Encode()
-		log.Printf("send request: %v %v", method, u.String())
 		req, err := http.NewRequest(method, u.String(), nil)
 		if err != nil {
 			return err
@@ -72,10 +70,7 @@ func (a *API) Request(method, endpoint string, params interface{}, out interface
 			return err
 		}
 		defer func(Body io.ReadCloser) {
-			err := Body.Close()
-			if err != nil {
-				log.Printf("error while close response: %v", err)
-			}
+			Body.Close()
 		}(res.Body)
 		if res.StatusCode != 200 {
 			e := CovalentError{}
