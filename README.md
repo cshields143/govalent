@@ -13,6 +13,7 @@ For further documentation (these two changes affect nothing the user sees or int
 
 - Added the Block Heights endpoint from Class A
 - A general `PaginateParams` type has been added, and `LogEventsParams` changed to allow specifying page size
+- Don't log our GET requests
 
 ## Install
 
